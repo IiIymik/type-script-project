@@ -1,9 +1,18 @@
-var User = "vlad";
-var createUsers = function (name) {
-    console.log(name);
+var ingredients = [
+    'Картошка',
+    'Грибы',
+    'Чеснок',
+    'Помидоры',
+    'Зелень',
+    'Приправы',
+];
+var ulItem = document.getElementById('ingredients');
+var createEl = function (option) {
+    return option.map(function (el) {
+        var elLi = document.createElement('li');
+        elLi.textContent = el;
+        return elLi;
+    });
 };
-createUsers(User);
-var arr = [1, 2, 3, 4, 5];
-console.log(arr);
-var mango = { id: 24 };
-console.log(mango);
+var elements = createEl(ingredients);
+ulItem.append.apply(ulItem, elements);
